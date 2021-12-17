@@ -1,6 +1,6 @@
-class LoginPage {
+export default new class LoginPage {
     
-open () {
+navigate() {
     cy.visit('https://opensource-demo.orangehrmlive.com/')
 }
 
@@ -16,5 +16,12 @@ get getLoginBtn() {
         return cy.get('#btnLogin')
     }
 
+get getProfile(){
+    return cy.get('#welcome')
 }
-export default new LoginPage()
+
+get getLogoutBtn(){
+    return cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a')
+}
+
+}

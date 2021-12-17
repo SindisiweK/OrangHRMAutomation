@@ -1,0 +1,30 @@
+Please advise if the following fields should allow both (string & numeric characters):
+Recieving
+Lot No
+Bundle/Bag No
+Bag Seal No
+Mine Weight in (Kg)
+Bridge Weight(KG)
+
+Packing
+Payload in KG
+Tare weight
+Container Acep number
+Gross weight period
+
+
+When selecting Add bag by mistake how to rectify it, we currently don't have a cancel button on the add bag grid.
+
+
+13 - 7HR 20 minutes
+14 - 7HR 25 minutes
+15 - 8HRS
+16 - NON-Public holiday
+17 - 4HRS
+
+20 - 7HR 30 Minutes
+21 - 8HRS
+22 - 8HRS
+23 - 4HRS
+
+
