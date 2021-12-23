@@ -4,24 +4,16 @@ navigate() {
     cy.visit('https://opensource-demo.orangehrmlive.com/')
 }
 
-get getusernameText() {
-        return cy.get('#divUsername > .form-hint')
-    }
-
-get getpasswordText() {
-        return cy.get('#txtPassword')
-    }
-
-get getLoginBtn() {
-        return cy.get('#btnLogin')
-    }
-
-get getProfile(){
-    return cy.get('#welcome')
+login(username,password){
+    cy.get('#divUsername > .form-hint').type(username)
+    cy.get('#txtPassword').clear().then(e => {if (password !== '') cy.wrap(e).type(password)})
 }
 
-get getLogoutBtn(){
-    return cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a')
+submit(){
+    cy.get('#btnLogin').click()
 }
-
+logOut(){
+    cy.get('#welcome').click()
+    cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a').click()
+}
 }

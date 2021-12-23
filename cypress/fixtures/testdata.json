@@ -2,5 +2,6 @@
     "username": "Admin",
     "password": "admin123",
     "dummyUsername": "admin",
-    "dummyPassword": "admin890"
+    "dummyPassword": "admin890",
+    "orangeHRMUrl": "https://opensource-demo.orangehrmlive.com/"
 }
