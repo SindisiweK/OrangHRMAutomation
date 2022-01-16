@@ -11,7 +11,7 @@ describe('Login Tests', () => {
 })
 
   beforeEach(() => {
-    LoginPage.navigate()
+    LoginPage.navigate(credentials.orangeHRMUrl)
   })
 
     it('Validates the user login when login credential are incorrect', () => {

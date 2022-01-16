@@ -3,5 +3,13 @@
     "password": "admin123",
     "dummyUsername": "admin",
     "dummyPassword": "admin890",
-    "orangeHRMUrl": "https://opensource-demo.orangehrmlive.com/"
+    "orangeHRMUrl": "https://opensource-demo.orangehrmlive.com/",
+    "firstname": "Admin100",
+    "middlename": "Admin00",
+    "lastname": "Admining",
+    "employeeId": "0526",
+    "addempusername": "Admin100A",
+    "addemppassword": "test@1234",
+    "confirmpassword": "test@1234"
 }
+

@@ -1,7 +1,7 @@
 export default new class LoginPage {
     
-navigate() {
-    cy.visit('https://opensource-demo.orangehrmlive.com/')
+navigate(url) {
+    cy.visit(url)
 }
 
 login(username,password){

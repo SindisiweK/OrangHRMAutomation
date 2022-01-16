@@ -1,37 +1,51 @@
 import loginPage from '../../page-objects/login-page'
 import pimPage from '../../page-objects/pim-page'
 
-describe('Add employees the list', () => {
-  it('Validates if the non-existing emeployee can be added', () => {
+let credentials = null
+describe('Login Tests', () => {
 
-    loginPage.open()
-    loginPage.getusernameText.type('Admin')
-    loginPage.getpasswordText.type('admin123')
-    loginPage.getLoginBtn.click()
-    pimPage.pimtab.click()
-    pimPage.employeeListTab.click()
-  
+  before(() => {
+  cy.fixture('testdata').then((data) => {
+    credentials = data  
+  })
+})
+
+  beforeEach(() => {
+    loginPage.navigate(credentials.orangeHRMUrl)
   })
 
-it('Validates the fields to add user datails', () => {
-
-  pimPage.addBtn.click()
-  pimPage.firstNameText.type('Andrews')
-  pimPage.middleNameText.type('Christina')
-  pimPage.lastNameText.type('Smith')
-  pimPage.employeeIdText.type('0299')
-  
+it('Validates if you can save data on the add employee fields', () => {
+  loginPage.login(credentials.username,credentials.password)
+  loginPage.submit()
+  pimPage.pimtab()
+  pimPage.addBtn()
+  pimPage.fullNameText(credentials.firstname,credentials.middlename,credentials.lastname)
+  pimPage.employeeIdText(credentials.employeeId)
+  pimPage.loginChkBox()
+  pimPage.usernameLoginText(credentials.addempusername)
+  pimPage.passwordLoginText(credentials.addemppassword)
+  pimPage.confirmPasswordText(credentials.confirmpassword)
+  pimPage.statusSelection()
+  pimPage.saveEmployeeDetails() 
 })
 
-it('Validates if the user can add details on the additional fields', () => {
-
-pimPage.loginChkBox.check()
-pimPage.usernameLoginText.type('Zuri')
-pimPage.passwordText.type('Dora')
-pimPage.confirmPasswordText.type('Tsonga')
-pimPage.statusSelection.select('Enabled')
-
+it('Validates if data can be saved without creating login details', () => {
+  loginPage.login(credentials.username,credentials.password)
+  loginPage.submit()
+  pimPage.pimtab()
+  pimPage.addBtn()
+  pimPage.fullNameText(credentials.firstname,credentials.middlename,credentials.lastname)
+  pimPage.employeeIdText(credentials.employeeId)
+  pimPage.saveEmployeeDetails()
 })
 
+it('Validate if can add an employee by only inserting required fields', () => {
+  loginPage.login(credentials.username,credentials.password)
+  loginPage.submit()
+  pimPage.pimtab()
+  pimPage.addBtn()
+  pimPage.fullNameText(credentials.firstname,'',credentials.lastname)
+  pimPage.saveEmployeeDetails()
+})
 })
 

@@ -1,53 +1,43 @@
-class PimPage {
+export default new class PimPage {
 
-get employeeListTab() {
-        return cy.get('#menu_pim_viewEmployeeList')
-        
+pimtab(){
+    cy.get('#menu_pim_viewPimModule > b').click()
 }
 
-get addBtn() {
-    return cy.get('#btnAdd')
+addBtn() {
+    cy.get('#btnAdd').click()
 }
 
-get firstNameText() {
-    return cy.get('#firstName')
+fullNameText(firstname,middlename,lastname) {
+    cy.get('#firstName').type(firstname)
+    cy.get('#middleName').type(middlename)
+    cy.get('#lastName').type(lastname)
 }
 
-get middleNameText() {
-    return cy.get('#middleName')
+employeeIdText(employeeId) {
+    cy.get('#employeeId').type(employeeId)
 }
 
-get lastNameText() {
-    return  cy.get('#lastName')
+loginChkBox() {
+    cy.get('#chkLogin').check()
 }
 
-get employeeIdText() {
-    return cy.get('#employeeId')
+usernameLoginText(addempusername){
+    cy.get('#user_name').type(addempusername)
 }
 
-get loginChkBox() {
-    return cy.get('#chkLogin')
+passwordLoginText(addemppassword){
+    cy.get('#user_password').type(addemppassword)
 }
 
-get pimtab(){
-    return cy.get('#menu_pim_viewPimModule > b')
+confirmPasswordText(confirmpassword){
+    cy.get('#re_password').type(confirmpassword)
 }
 
-get usernameLoginText(){
-    return cy.get('#user_name')
+statusSelection(){
+    cy.get('#status').select('Enabled')
 }
-
-get passwordLoginText(){
-    return cy.get('#user_password')
+saveEmployeeDetails(){
+    cy.get('#btnSave').click()
 }
-
-get confirmPasswordText(){
-    return cy.get('#re_password')
 }
-
-get statusSelection(){
-    return cy.get('#status')
-}
-
-}
-export default new PimPage()
