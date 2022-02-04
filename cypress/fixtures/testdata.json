@@ -1,9 +1,9 @@
 {
-    "username": "Admin",
-    "password": "admin123",
+    "username": "admin",
+    "password": "Bitnami.12345",
     "dummyUsername": "admin",
     "dummyPassword": "admin890",
-    "orangeHRMUrl": "https://opensource-demo.orangehrmlive.com/",
+    "orangeHRMUrl": "http://localhost:480/",
     "firstname": "Admin100",
     "middlename": "Admin00",
     "lastname": "Admining",

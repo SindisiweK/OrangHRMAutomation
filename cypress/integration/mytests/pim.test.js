@@ -39,13 +39,22 @@ it('Validates if data can be saved without creating login details', () => {
   pimPage.saveEmployeeDetails()
 })
 
-it('Validate if can add an employee by only inserting required fields', () => {
+it('Validates if can add an employee by only inserting required fields', () => {
   loginPage.login(credentials.username,credentials.password)
   loginPage.submit()
   pimPage.pimtab()
   pimPage.addBtn()
-  pimPage.fullNameText(credentials.firstname,'',credentials.lastname)
+  pimPage.fullNameText(credentials.firstname,"",credentials.lastname)
   pimPage.saveEmployeeDetails()
+})
+
+it('Validates if existing employee details can be saved', () => {
+  loginPage.login(credentials.username,credentials.password)
+  loginPage.submit()
+  pimPage.pimtab()
+  pimPage.addBtn()
+  pimPage.fullNameText(credentials.firstname,credentials.middlename,credentials.lastname)
+  pimPage.saveEmployeeDetails().should('contain', 'Failed To Save: Employee Id Exists')
 })
 })
 
