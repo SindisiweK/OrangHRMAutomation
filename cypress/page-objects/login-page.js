@@ -4,7 +4,7 @@ navigate(url) {
     cy.visit(url)
 }
 
-login(username,password){
+loginCredentials(username,password){
     cy.get('#divUsername > .form-hint').type(username)
     cy.get('#txtPassword').clear().then(e => {if (password !== '') cy.wrap(e).type(password)})
 }

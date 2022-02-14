@@ -2,7 +2,7 @@ import loginPage from '../../page-objects/login-page'
 import pimPage from '../../page-objects/pim-page'
 
 let credentials = null
-describe('Login Tests', () => {
+describe('Employee management tests', () => {
 
   before(() => {
   cy.fixture('testdata').then((data) => {
@@ -14,23 +14,23 @@ describe('Login Tests', () => {
     loginPage.navigate(credentials.orangeHRMUrl)
   })
 
-it('Validates if you can save data on the add employee fields', () => {
-  loginPage.login(credentials.username,credentials.password)
+it('Validates if you can create an employee record', () => {
+  loginPage.loginCredentials(credentials.username,credentials.password)
   loginPage.submit()
   pimPage.pimtab()
   pimPage.addBtn()
   pimPage.fullNameText(credentials.firstname,credentials.middlename,credentials.lastname)
   pimPage.employeeIdText(credentials.employeeId)
-  pimPage.loginChkBox()
-  pimPage.usernameLoginText(credentials.addempusername)
-  pimPage.passwordLoginText(credentials.addemppassword)
+  pimPage.loginCredentialsChkBox()
+  pimPage.usernameloginCredentialsText(credentials.addempusername)
+  pimPage.passwordloginCredentialsText(credentials.addemppassword)
   pimPage.confirmPasswordText(credentials.confirmpassword)
   pimPage.statusSelection()
   pimPage.saveEmployeeDetails() 
 })
 
-it('Validates if data can be saved without creating login details', () => {
-  loginPage.login(credentials.username,credentials.password)
+it('Validates if an employee record can be saved without creating loginCredentials details', () => {
+  loginPage.loginCredentials(credentials.username,credentials.password)
   loginPage.submit()
   pimPage.pimtab()
   pimPage.addBtn()
@@ -39,8 +39,8 @@ it('Validates if data can be saved without creating login details', () => {
   pimPage.saveEmployeeDetails()
 })
 
-it('Validates if can add an employee by only inserting required fields', () => {
-  loginPage.login(credentials.username,credentials.password)
+it('Validates if can add an employee record by only inserting required fields', () => {
+  loginPage.loginCredentials(credentials.username,credentials.password)
   loginPage.submit()
   pimPage.pimtab()
   pimPage.addBtn()
@@ -48,8 +48,8 @@ it('Validates if can add an employee by only inserting required fields', () => {
   pimPage.saveEmployeeDetails()
 })
 
-it('Validates if existing employee details can be saved', () => {
-  loginPage.login(credentials.username,credentials.password)
+it('Validates if existing employee details can be saved multiple times', () => {
+  loginPage.loginCredentials(credentials.username,credentials.password)
   loginPage.submit()
   pimPage.pimtab()
   pimPage.addBtn()

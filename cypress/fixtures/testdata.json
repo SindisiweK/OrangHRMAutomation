@@ -10,6 +10,6 @@
     "employeeId": "0526",
     "addempusername": "Admin100A",
     "addemppassword": "test@1234",
-    "confirmpassword": "test@1234"
+    "confirmpassword": "test@1234",
+    "leaveTypeName" : "Sick Leave"
 }
-

@@ -1,8 +1,7 @@
-/// <reference types="cypress" />
-import LoginPage from "../../page-objects/login-page"
+import loginPage from "../../page-objects/login-page"
 
 let credentials = null
-describe('Login Tests', () => {
+describe('loginCredentials Tests', () => {
 
   before(() => {
   cy.fixture('testdata').then((data) => {
@@ -11,35 +10,35 @@ describe('Login Tests', () => {
 })
 
   beforeEach(() => {
-    LoginPage.navigate(credentials.orangeHRMUrl)
+    loginPage.navigate(credentials.orangeHRMUrl)
   })
 
-    it('Validates the user login when login credential are incorrect', () => {
-        LoginPage.login(credentials.dummyUsername,credentials.dummyPassword)
-        LoginPage.submit()
+    it('Validates the user loginCredentials when loginCredentials credential are incorrect', () => {
+        loginPage.loginCredentials(credentials.dummyUsername,credentials.dummyPassword)
+        loginPage.submit()
       cy.get('#spanMessage').should('contain','Invalid credentials')
     })
 
-    it('Validates login when username and password is not entered', () => {
-      LoginPage.submit()
+    it('Validates loginCredentials when username and password is not entered', () => {
+      loginPage.submit()
       cy.get('#spanMessage').should('contain','Username cannot be empty')
     })
 
-    it('Validates login when the password field is empty', () => {
-      LoginPage.login(credentials.dummyUsername,'')
-      LoginPage.submit()
+    it('Validates loginCredentials when the password field is empty', () => {
+      loginPage.loginCredentials(credentials.dummyUsername,'')
+      loginPage.submit()
       cy.get('#spanMessage').should('contain','Password cannot be empty')
     })
 
-    it('Validate login when correct credentials are entered', () => {
-      LoginPage.login(credentials.username,credentials.password)
-      LoginPage.submit()
+    it('Validate loginCredentials when correct credentials are entered', () => {
+      loginPage.loginCredentials(credentials.username,credentials.password)
+      loginPage.submit()
     })
 
     it('Validate if the user can logout successfully', () => {
-      LoginPage.login(credentials.username,credentials.password)
-      LoginPage.submit()
-      LoginPage.logOut()
+      loginPage.loginCredentials(credentials.username,credentials.password)
+      loginPage.submit()
+      loginPage.logOut()
     })
   })
 
