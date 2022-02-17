@@ -11,5 +11,7 @@
     "addempusername": "Admin100A",
     "addemppassword": "test@1234",
     "confirmpassword": "test@1234",
-    "leaveTypeName" : "Sick Leave"
+    "leaveTypeName" : "Annual Leave",
+    "employeename": "Admin1 AdminOne",
+    "comment": "2022 leave"
 }

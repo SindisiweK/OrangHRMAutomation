@@ -7,7 +7,6 @@ export default new class LeavePage{
     configureSubTab(){
         cy.get('#menu_leave_Configure').invoke('show')
         cy.contains('Configure').click({force:true})
-        
     }
 
     leaveTypesOption(){
@@ -31,14 +30,20 @@ export default new class LeavePage{
     }
 
     deleteLeaveType(){
-        cy.get('#ohrmList_chkSelectRecord_2').check()
+        cy.get('[type="checkbox"]').check()
         cy.get('#btnDelete').click()
         cy.get('#deleteConfModal').should('be.visible')
         cy.get('#dialogDeleteBtn').click()
     }
 
     assignLeave(employeeName,comment){
+       cy.get('#menu_leave_assignLeave').click()
        cy.get('#assignleave_txtEmployee_empName').type(employeeName)
-       
+       cy.get('#assignleave_txtLeaveType > :nth-child(1) > a').click()
+       cy.get('#assignleave_txtFromDate').click().type(Cypress.moment().format('YYYY-MM-DD'))
+       cy.get('#assignleave_txtToDate').click().type(Cypress.moment().format('YYYY-MM-DD'))
+       cy.get('#assignleave_duration_duration').select('Full Day')
+       cy.get('#assignleave_txtComment').type(comment)
+       cy.get('#assignBtn').click()
     }
 }

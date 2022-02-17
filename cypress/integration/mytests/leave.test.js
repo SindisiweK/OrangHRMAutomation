@@ -12,13 +12,13 @@ describe('Leave Tests', () => {
 
   beforeEach(() => {
     loginPage.navigate(credentials.orangeHRMUrl)
-  })
-
-  it('Validates if you can add leave type', () => {
     loginPage.loginCredentials(credentials.username,credentials.password)
     loginPage.submit()
     leavePage.leaveTab()
     leavePage.configureSubTab()
+  })
+
+  it('Validates if you can add leave type', () => {
     leavePage.leaveTypesOption()
     leavePage.addLeaveTypeButton()
     leavePage.leaveTypeName(credentials.leaveTypeName)
@@ -26,11 +26,11 @@ describe('Leave Tests', () => {
   })
 
   it('Validates if you can delete leave type', () => {
-    loginPage.loginCredentials(credentials.username,credentials.password)
-    loginPage.submit()
-    leavePage.leaveTab()
-    leavePage.configureSubTab()
     leavePage.leaveTypesOption()
     leavePage.deleteLeaveType()
+  })
+
+  it('Validates if you can assign leave to an employee', () => {
+    leavePage.assignLeave(credentials.employeename,credentials.comment)
   })
 })
