@@ -18,7 +18,7 @@ describe('Leave Tests', () => {
     leavePage.configureSubTab()
   })
 
-  it('Validates if you can add leave type', () => {
+  /*it('Validates if you can add leave type', () => {
     leavePage.leaveTypesOption()
     leavePage.addLeaveTypeButton()
     leavePage.leaveTypeName(credentials.leaveTypeName)
@@ -28,9 +28,10 @@ describe('Leave Tests', () => {
   it('Validates if you can delete leave type', () => {
     leavePage.leaveTypesOption()
     leavePage.deleteLeaveType()
-  })
+  })*/
 
   it('Validates if you can assign leave to an employee', () => {
+    leavePage.leaveTypesOption()
     leavePage.assignLeave(credentials.employeename,credentials.comment)
   })
 })

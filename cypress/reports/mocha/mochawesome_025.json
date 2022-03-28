@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-26T17:03:41.539Z",
+    "end": "2022-03-26T17:03:56.842Z",
+    "duration": 15303,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3450064c-fb15-4305-b8cc-6da09965261f",
+      "title": "",
+      "fullFile": "cypress/integration/login/login.test.js",
+      "file": "cypress/integration/login/login.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+          "title": "loginCredentials Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validates the user loginCredentials when loginCredentials credential are incorrect",
+              "fullTitle": "loginCredentials Tests Validates the user loginCredentials when loginCredentials credential are incorrect",
+              "timedOut": null,
+              "duration": 3902,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.loginCredentials(credentials.dummyUsername, credentials.dummyPassword);\n_loginPage.default.submit();\ncy.get('#spanMessage').should('contain', 'Invalid credentials');",
+              "err": {},
+              "uuid": "9a6e0527-0d66-4862-bf6d-c54dd021b763",
+              "parentUUID": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validates loginCredentials when username and password is not entered",
+              "fullTitle": "loginCredentials Tests Validates loginCredentials when username and password is not entered",
+              "timedOut": null,
+              "duration": 205,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.submit();\ncy.get('#spanMessage').should('contain', 'Username cannot be empty');",
+              "err": {},
+              "uuid": "2a12fea3-1c53-48dc-9c2e-ea75c91d7cb3",
+              "parentUUID": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validates loginCredentials when the password field is empty",
+              "fullTitle": "loginCredentials Tests Validates loginCredentials when the password field is empty",
+              "timedOut": null,
+              "duration": 569,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.loginCredentials(credentials.dummyUsername, '');\n_loginPage.default.submit();\ncy.get('#spanMessage').should('contain', 'Password cannot be empty');",
+              "err": {},
+              "uuid": "93b475d8-20aa-48fb-a46e-7fda4aa70af6",
+              "parentUUID": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate loginCredentials when correct credentials are entered",
+              "fullTitle": "loginCredentials Tests Validate loginCredentials when correct credentials are entered",
+              "timedOut": null,
+              "duration": 4801,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.loginCredentials(credentials.username, credentials.password);\n_loginPage.default.submit();",
+              "err": {},
+              "uuid": "9901a49b-dffd-4e7a-936c-3323fb0bdebc",
+              "parentUUID": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate if the user can logout successfully",
+              "fullTitle": "loginCredentials Tests Validate if the user can logout successfully",
+              "timedOut": null,
+              "duration": 4218,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.loginCredentials(credentials.username, credentials.password);\n_loginPage.default.submit();\n_loginPage.default.logOut();",
+              "err": {},
+              "uuid": "cf99ac93-cca4-4846-8cef-8d28752f7ed5",
+              "parentUUID": "1f460fd0-0640-46a7-86b9-2c282ea06aef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a6e0527-0d66-4862-bf6d-c54dd021b763",
+            "2a12fea3-1c53-48dc-9c2e-ea75c91d7cb3",
+            "93b475d8-20aa-48fb-a46e-7fda4aa70af6",
+            "9901a49b-dffd-4e7a-936c-3323fb0bdebc",
+            "cf99ac93-cca4-4846-8cef-8d28752f7ed5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13695,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.1.0"
+    }
+  }
+}

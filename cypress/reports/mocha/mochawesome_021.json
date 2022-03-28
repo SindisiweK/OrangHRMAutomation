@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-03-04T13:48:46.465Z",
+    "end": "2022-03-04T13:48:54.774Z",
+    "duration": 8309,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aceca64a-6b90-4008-a78c-c19dbb06796b",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/admin.test.js",
+      "file": "cypress/integration/mytests/admin.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6e99bf27-ef0e-4240-a0ce-79bd60f8e716",
+          "title": "Finds an element",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Search an existing user",
+              "fullTitle": "Finds an element Search an existing user",
+              "timedOut": null,
+              "duration": 4111,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Admin Tab navigation\ncy.get('#menu_admin_viewAdminModule > b').click();\ncy.get('#menu_admin_UserManagement');\ncy.get('#searchSystemUser_userName').type('Admin');\ncy.get('#searchSystemUser_userType').select('Admin');\ncy.get('#searchSystemUser_employeeName_empName').type('Jessica Belen Collings');\ncy.get('#searchSystemUser_status').select('Enabled');\ncy.get('#searchBtn').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#menu_admin_viewAdminModule > b`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#menu_admin_viewAdminModule > b`, but never found it.\n    at Context.eval (http://localhost:64416/__cypress/tests?p=cypress\\integration\\mytests\\admin.test.js:102:8)",
+                "diff": null
+              },
+              "uuid": "12fd2beb-f6c2-4a7a-91c8-41bc329af43d",
+              "parentUUID": "6e99bf27-ef0e-4240-a0ce-79bd60f8e716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add new user",
+              "fullTitle": "Finds an element Add new user",
+              "timedOut": null,
+              "duration": 4135,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Add new user\ncy.get('#btnAdd').click();\ncy.get('#systemUser_userType').select('Admin');\ncy.get('#systemUser_employeeName_empName').type('Sindi Kubheka');\ncy.get('#systemUser_userName').type('sindik');\ncy.get('#systemUser_status').select('Enabled');\ncy.get('#systemUser_password').type('Sindi@456');\ncy.get('#systemUser_confirmPassword').type('Sindi@456');\ncy.get('#btnSave').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#btnAdd`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#btnAdd`, but never found it.\n    at Context.eval (http://localhost:64416/__cypress/tests?p=cypress\\integration\\mytests\\admin.test.js:112:8)",
+                "diff": null
+              },
+              "uuid": "94194a4d-a37d-4c17-b6af-6751e4b0e17c",
+              "parentUUID": "6e99bf27-ef0e-4240-a0ce-79bd60f8e716",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "12fd2beb-f6c2-4a7a-91c8-41bc329af43d",
+            "94194a4d-a37d-4c17-b6af-6751e4b0e17c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8246,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.1.0"
+    }
+  }
+}
